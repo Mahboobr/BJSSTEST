@@ -15,21 +15,6 @@ Capybara.configure do |config|
     Capybara.register_driver :chrome do |app|
       Capybara::Selenium::Driver.new(app, :browser => :chrome)
     end
-  elsif ENV['firefox']
-    Capybara.default_driver = :firefox
-    Capybara.register_driver :firefox do |app|
-      Capybara::Selenium::Driver.new(app, :browser => :firefox)
-    end
-  elsif ENV['safari']
-    Capybara.default_driver = :safari
-    Capybara.register_driver :safari do |app|
-      Capybara::Selenium::Driver.new(app, :browser => :safari)
-    end
-  else
-    Capybara.default_driver = :chrome
-    Capybara.register_driver :chrome do |app|
-      Capybara::Selenium::Driver.new(app, :browser => :chrome)
-    end
   end
 end
 
