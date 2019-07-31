@@ -10,11 +10,9 @@ Capybara.configure do |config|
   config.ignore_hidden_elements = false #to ensure that all hidden elements on a page are recorded/available
   config.match = :prefer_exact #this setting is to ensure Capybara has specific matching rather than fuzzy logic
 
-  if ENV['chrome']
-    Capybara.default_driver = :chrome
-    Capybara.register_driver :chrome do |app|
-      Capybara::Selenium::Driver.new(app, :browser => :chrome)
-    end
+  Capybara.default_driver = :chrome
+  Capybara.register_driver :chrome do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
   end
 end
 
