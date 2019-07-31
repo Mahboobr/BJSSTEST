@@ -8,4 +8,8 @@ module BJSSTests
     BJSSTest2.new
   end
 
+  def bjss_test_3
+    BJSSTest3.new
+  end
+
 end
